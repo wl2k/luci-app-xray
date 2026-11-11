@@ -19,7 +19,7 @@ jobs:
       matrix:
         include:
           - id: 25.12
-            arch: x86_64
+            arch: aarch64_generic
             sdk_url_path: https://downloads.openwrt.org/releases/25.12.2/targets/rockchip/armv8/
             sdk_name: -sdk-25.12.2-rockchip-armv8_
 
@@ -46,7 +46,7 @@ jobs:
           restore-keys: |
             openwrt-${{ matrix.arch }}-${{ matrix.id }}-${{ env.PACKAGE_NAME }}-
       - name: Install Dependencies
-        run: sudo apt-get install -y ccache gettext libncurses5-dev xsltproc zstd
+        run: sudo apt-get install -y ccache gettext libncurses5-dev xsltproc zstd pyth python-pyelftools
         env:
           DEBIAN_FRONTEND: noninteractive
       - name: Create Directories
