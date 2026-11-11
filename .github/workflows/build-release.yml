@@ -46,7 +46,7 @@ jobs:
           restore-keys: |
             openwrt-${{ matrix.arch }}-${{ matrix.id }}-${{ env.PACKAGE_NAME }}-
       - name: Install Dependencies
-        run: sudo apt-get install -y ccache gettext libncurses5-dev xsltproc zstd pyth python-pyelftools
+        run: sudo apt-get install -y ccache gettext libncurses5-dev xsltproc zstd python3-pyelftools
         env:
           DEBIAN_FRONTEND: noninteractive
       - name: Create Directories
